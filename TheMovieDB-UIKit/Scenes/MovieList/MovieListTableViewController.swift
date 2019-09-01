@@ -17,7 +17,7 @@ protocol MovieListViewProtocol: class {
 }
 
 class MovieListTableViewController: UITableViewController {
-
+    
     var presenter: MovieListPresenterProtocol!
     var movies: [PreviewMovie] = []
     
@@ -25,24 +25,31 @@ class MovieListTableViewController: UITableViewController {
         super.viewDidLoad()
         title = "THE MOVIE DB"
         MovieListRouter.createMovieListModuler(movieListRef: self)
+        tableView.register(MovieItemTableViewCell.nib, forCellReuseIdentifier: MovieItemTableViewCell.cellReuseIdentifier)
         presenter.viewDidLoad()
     }
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let movie = movies[indexPath.row]
-        let cell: UITableViewCell = UITableViewCell()
-        cell.textLabel?.text = movie.title
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MovieItemTableViewCell.cellReuseIdentifier, for: indexPath) as? MovieItemTableViewCell else {
+            return UITableViewCell()
+        }
+        cell.setupData(movie: movie)
         return cell
     }
-
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 175
+    }
+    
 }
 
 extension MovieListTableViewController: MovieListViewProtocol {
