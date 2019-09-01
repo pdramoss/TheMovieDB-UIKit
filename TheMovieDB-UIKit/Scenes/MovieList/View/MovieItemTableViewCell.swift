@@ -30,18 +30,19 @@ class MovieItemTableViewCell: UITableViewCell {
     }
     
     func customPoster(_ posterPath: String? ) {
-        var url = "https://httpbin.org/image/png"
-        
-        if let moviePoster = posterPath {
-            url = "https://image.tmdb.org/t/p/w500\(moviePoster)"
+        guard let path = posterPath else {
+            return
         }
         
         DispatchQueue.main.async {
-            Alamofire.request(url).responseImage { (response) in
-                if let image = response.result.value {
+            NetworkManager().getImage(path: path, completion: { (result) in
+                switch result {
+                case .success(let image):
                     self.posterImage.image = image
+                case .failure(let error):
+                    print("ERROR: \(error)")
                 }
-            }
+            })
         }
     }
     

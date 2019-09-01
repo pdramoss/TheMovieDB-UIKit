@@ -11,6 +11,7 @@ import Alamofire
 
 protocol EndPointType {
     var baseURL: URL { get }
+    var baseImageURL: URL { get }
     var path: String { get }
     var httpMethod: HTTPMethod { get }
     var parameters: Parameters? { get }

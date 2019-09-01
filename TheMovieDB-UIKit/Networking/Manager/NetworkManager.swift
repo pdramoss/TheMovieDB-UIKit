@@ -37,8 +37,9 @@ protocol NetworkManagerProtocol {
     
     func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>
     
-    func getMovie(id: Int, completion: @escaping (GetMovieCompletion) )
+    func getMovie(id: Int, completion: @escaping (GetMovieCompletion))
     func getPopularMovies(page: Int, completion: @escaping (GetPopularCompletion))
+    func getImage(path: String, completion: @escaping (GetImageCompletion))
 }
 
 struct NetworkManager: NetworkManagerProtocol {
