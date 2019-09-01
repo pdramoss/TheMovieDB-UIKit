@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		821A8ABE1E40BC261DA54EC2 /* Pods_TheMovieDB_UIKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 01EB2934E0D376A1DECAC674 /* Pods_TheMovieDB_UIKitUITests.framework */; };
 		C6C37A79B9559C0E4406EA0E /* Pods_TheMovieDB_UIKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1EACE1ACD9D227F5DAC21EDD /* Pods_TheMovieDB_UIKitTests.framework */; };
+		E51B748A231B2EDB00BCAB61 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B7489231B2EDB00BCAB61 /* NetworkManager.swift */; };
+		E51B748D231B336E00BCAB61 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B748C231B336E00BCAB61 /* Movie.swift */; };
+		E51B7491231B383B00BCAB61 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B7490231B383B00BCAB61 /* API.swift */; };
+		E51B7493231B392500BCAB61 /* EndPointType.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B7492231B392500BCAB61 /* EndPointType.swift */; };
+		E51B7497231B3B8900BCAB61 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B7496231B3B8900BCAB61 /* Router.swift */; };
+		E51B749C231B53D500BCAB61 /* GetMovieUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B749B231B53D500BCAB61 /* GetMovieUseCase.swift */; };
 		E569BA04231AEDBF0012EE32 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569BA03231AEDBF0012EE32 /* AppDelegate.swift */; };
 		E569BA06231AEDBF0012EE32 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E569BA05231AEDBF0012EE32 /* ViewController.swift */; };
 		E569BA09231AEDBF0012EE32 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E569BA07231AEDBF0012EE32 /* Main.storyboard */; };
@@ -45,6 +51,12 @@
 		67EB5B83BAF7E47A0E85E8C2 /* Pods_TheMovieDB_UIKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TheMovieDB_UIKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A02FB60A904C5EA0BF03A41B /* Pods-TheMovieDB-UIKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDB-UIKitTests.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieDB-UIKitTests/Pods-TheMovieDB-UIKitTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C58E345306E54E045366ED90 /* Pods-TheMovieDB-UIKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TheMovieDB-UIKit.debug.xcconfig"; path = "Target Support Files/Pods-TheMovieDB-UIKit/Pods-TheMovieDB-UIKit.debug.xcconfig"; sourceTree = "<group>"; };
+		E51B7489231B2EDB00BCAB61 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		E51B748C231B336E00BCAB61 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		E51B7490231B383B00BCAB61 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		E51B7492231B392500BCAB61 /* EndPointType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndPointType.swift; sourceTree = "<group>"; };
+		E51B7496231B3B8900BCAB61 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		E51B749B231B53D500BCAB61 /* GetMovieUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetMovieUseCase.swift; sourceTree = "<group>"; };
 		E569BA00231AEDBF0012EE32 /* TheMovieDB-UIKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheMovieDB-UIKit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E569BA03231AEDBF0012EE32 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E569BA05231AEDBF0012EE32 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +126,58 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		E51B7482231B216900BCAB61 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				E51B749A231B53C400BCAB61 /* UseCases */,
+				E51B7485231B241600BCAB61 /* EndPoint */,
+				E51B7486231B242200BCAB61 /* Manager */,
+				E51B7484231B230E00BCAB61 /* Services */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		E51B7484231B230E00BCAB61 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				E51B7492231B392500BCAB61 /* EndPointType.swift */,
+				E51B7496231B3B8900BCAB61 /* Router.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		E51B7485231B241600BCAB61 /* EndPoint */ = {
+			isa = PBXGroup;
+			children = (
+				E51B7490231B383B00BCAB61 /* API.swift */,
+			);
+			path = EndPoint;
+			sourceTree = "<group>";
+		};
+		E51B7486231B242200BCAB61 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				E51B7489231B2EDB00BCAB61 /* NetworkManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		E51B748B231B32EB00BCAB61 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				E51B748C231B336E00BCAB61 /* Movie.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		E51B749A231B53C400BCAB61 /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				E51B749B231B53D500BCAB61 /* GetMovieUseCase.swift */,
+			);
+			path = UseCases;
+			sourceTree = "<group>";
+		};
 		E569B9F7231AEDBF0012EE32 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +203,8 @@
 		E569BA02231AEDBF0012EE32 /* TheMovieDB-UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				E51B748B231B32EB00BCAB61 /* Models */,
+				E51B7482231B216900BCAB61 /* Networking */,
 				E569BA03231AEDBF0012EE32 /* AppDelegate.swift */,
 				E569BA05231AEDBF0012EE32 /* ViewController.swift */,
 				E569BA07231AEDBF0012EE32 /* Main.storyboard */,
@@ -425,9 +491,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E51B748A231B2EDB00BCAB61 /* NetworkManager.swift in Sources */,
+				E51B749C231B53D500BCAB61 /* GetMovieUseCase.swift in Sources */,
+				E51B7491231B383B00BCAB61 /* API.swift in Sources */,
 				E569BA06231AEDBF0012EE32 /* ViewController.swift in Sources */,
+				E51B7497231B3B8900BCAB61 /* Router.swift in Sources */,
 				E569BA0C231AEDBF0012EE32 /* TheMovieDB_UIKit.xcdatamodeld in Sources */,
 				E569BA04231AEDBF0012EE32 /* AppDelegate.swift in Sources */,
+				E51B748D231B336E00BCAB61 /* Movie.swift in Sources */,
+				E51B7493231B392500BCAB61 /* EndPointType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
