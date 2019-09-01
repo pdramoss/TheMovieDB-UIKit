@@ -20,7 +20,8 @@ protocol MovieDetailPresenterProtocol: class {
 }
 
 protocol MovieDetailInteractorOutputProtocol: class {
-    
+    func movieDetailDidFetch(movie: FullMovie)
+    func failedGetMovieDetail(error: String)
 }
 
 class MovieDetailPresenter: MovieDetailPresenterProtocol {
@@ -31,10 +32,20 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol {
     var id: Int?
     
     func viewDidLoad() {
-        
+        guard let id = id else {
+            router.showAlert(for: "ERROR 404")
+            return
+        }
+        interactor.getMovieInformation(id: id)
     }
 }
 
 extension MovieDetailPresenter: MovieDetailInteractorOutputProtocol {
+    func movieDetailDidFetch(movie: FullMovie) {
+        view?.displayMovieDetail(movie)
+    }
     
+    func failedGetMovieDetail(error: String) {
+        router.showAlert(for: error)
+    }
 }

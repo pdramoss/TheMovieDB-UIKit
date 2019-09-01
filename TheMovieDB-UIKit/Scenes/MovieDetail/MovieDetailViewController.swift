@@ -10,7 +10,7 @@ import UIKit
 
 protocol MovieDetailViewProtocol: class {
     var presenter: MovieDetailPresenterProtocol! { get set }
-    func displayMovie(_ movie: FullMovie)
+    func displayMovieDetail(_ movie: FullMovie)
 }
 
 class MovieDetailViewController: UIViewController {
@@ -20,13 +20,15 @@ class MovieDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .primary
         presenter.viewDidLoad()
     }
 }
 
 extension MovieDetailViewController: MovieDetailViewProtocol {
-    func displayMovie(_ movie: FullMovie) {
+    func displayMovieDetail(_ movie: FullMovie) {
         self.movie = movie
+        title = movie.title
     }
 }
 

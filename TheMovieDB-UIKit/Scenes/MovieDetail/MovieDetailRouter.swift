@@ -10,6 +10,7 @@ import UIKit
 
 protocol MovieDetailRouterProtocol: class {
     var viewController: UIViewController? { get set }
+    func showAlert(for error: String)
 }
 
 class MovieDetailRouter: MovieDetailRouterProtocol {
@@ -30,5 +31,13 @@ class MovieDetailRouter: MovieDetailRouterProtocol {
         presenter.interactor = interactor
         
         movieDetailRef.presenter = presenter
+    }
+    
+    func showAlert(for error: String) {
+        let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: { (_) in
+            self.viewController?.dismiss(animated: true, completion: nil)
+        }))
+        viewController?.present(alert, animated: true, completion: nil)
     }
 }

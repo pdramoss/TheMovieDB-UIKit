@@ -17,9 +17,16 @@ protocol MovieDetailInteractorProtocol: class {
 
 class MovieDetailInteractor: MovieDetailInteractorProtocol {
     var output: MovieDetailInteractorOutputProtocol?
-    var networkManager: NetworkManagerProtocol!
+    var networkManager: NetworkManagerProtocol! = NetworkManager()
     
     func getMovieInformation(id: Int) {
-        
+        networkManager.getMovie(id: id) { (result) in
+            switch result {
+            case .success(let movie):
+                self.output?.movieDetailDidFetch(movie: movie)
+            case .failure(let error):
+                self.output?.failedGetMovieDetail(error: error)
+            }
+        }
     }
 }

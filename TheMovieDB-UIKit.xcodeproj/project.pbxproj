@@ -18,6 +18,7 @@
 		E50164FB231C55840066FA5C /* MovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50164FA231C55840066FA5C /* MovieDetailPresenter.swift */; };
 		E50164FD231C55970066FA5C /* MovieDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50164FC231C55970066FA5C /* MovieDetailInteractor.swift */; };
 		E50164FF231C55B10066FA5C /* MovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50164FE231C55B10066FA5C /* MovieDetailRouter.swift */; };
+		E5016502231C5DB50066FA5C /* Extension-Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5016501231C5DB50066FA5C /* Extension-Color.swift */; };
 		E51B748A231B2EDB00BCAB61 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B7489231B2EDB00BCAB61 /* NetworkManager.swift */; };
 		E51B748D231B336E00BCAB61 /* PreviewMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B748C231B336E00BCAB61 /* PreviewMovie.swift */; };
 		E51B7491231B383B00BCAB61 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B7490231B383B00BCAB61 /* API.swift */; };
@@ -74,6 +75,7 @@
 		E50164FA231C55840066FA5C /* MovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenter.swift; sourceTree = "<group>"; };
 		E50164FC231C55970066FA5C /* MovieDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailInteractor.swift; sourceTree = "<group>"; };
 		E50164FE231C55B10066FA5C /* MovieDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRouter.swift; sourceTree = "<group>"; };
+		E5016501231C5DB50066FA5C /* Extension-Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Color.swift"; sourceTree = "<group>"; };
 		E51B7489231B2EDB00BCAB61 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E51B748C231B336E00BCAB61 /* PreviewMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMovie.swift; sourceTree = "<group>"; };
 		E51B7490231B383B00BCAB61 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -168,6 +170,14 @@
 				E50164FE231C55B10066FA5C /* MovieDetailRouter.swift */,
 			);
 			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		E5016500231C5DA10066FA5C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				E5016501231C5DB50066FA5C /* Extension-Color.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		E51B7482231B216900BCAB61 /* Networking */ = {
@@ -333,6 +343,7 @@
 		E569BA02231AEDBF0012EE32 /* TheMovieDB-UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				E5016500231C5DA10066FA5C /* Extension */,
 				E51B74B8231B88F900BCAB61 /* Resources */,
 				E51B749D231B675E00BCAB61 /* Scenes */,
 				E51B748B231B32EB00BCAB61 /* Models */,
@@ -553,6 +564,7 @@
 				E51B74C4231B8EF600BCAB61 /* Data.swift in Sources */,
 				E51B74A6231B694500BCAB61 /* MovieListRouter.swift in Sources */,
 				E51B748A231B2EDB00BCAB61 /* NetworkManager.swift in Sources */,
+				E5016502231C5DB50066FA5C /* Extension-Color.swift in Sources */,
 				E51B749C231B53D500BCAB61 /* GetMovieUseCase.swift in Sources */,
 				E50164FB231C55840066FA5C /* MovieDetailPresenter.swift in Sources */,
 				E51B74AA231B71E300BCAB61 /* GetPopularUseCase.swift in Sources */,

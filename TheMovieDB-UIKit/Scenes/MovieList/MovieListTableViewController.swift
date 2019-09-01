@@ -24,6 +24,7 @@ class MovieListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "THE MOVIE DB"
+        view.backgroundColor = .primary
         MovieListRouter.createMovieListModuler(movieListRef: self)
         tableView.register(MovieItemTableViewCell.nib, forCellReuseIdentifier: MovieItemTableViewCell.cellReuseIdentifier)
         presenter.viewDidLoad()
