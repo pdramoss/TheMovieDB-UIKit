@@ -27,13 +27,13 @@ class MockNetworkManager: NetworkManagerProtocol {
     
     func getMovie(id: Int, completion: @escaping (GetMovieCompletion)) {
         if id == 157336 {
-            completion(.success(movieInformation))
+            completion(.success(fullMovieInformation))
         } else {
             completion(.failure(NetworkResponse.checkNetwork.rawValue))
         }
     }
     
-    func getPopular(page: Int, completion: @escaping (GetPopularCompletion)) {
+    func getPopularMovies(page: Int, completion: @escaping (GetPopularCompletion)) {
         if page == 1 {
             completion(.success(popularInformation))
         } else {

@@ -9,7 +9,7 @@
 import Foundation
 
 enum GetMovieResult {
-    case success(Movie)
+    case success(FullMovie)
     case failure(String)
 }
 
@@ -31,7 +31,7 @@ extension NetworkManager {
                         return
                     }
                     do {
-                        let movie: Movie = try self.load(data: responseData)
+                        let movie: FullMovie = try self.load(data: responseData)
                         completion(.success(movie))
                     } catch {
                         completion(.failure(NetworkResponse.unableToDecode.rawValue))

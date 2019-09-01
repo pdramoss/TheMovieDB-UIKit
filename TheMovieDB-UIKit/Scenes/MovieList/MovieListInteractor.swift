@@ -20,7 +20,7 @@ class MovieListInteractor: MovieListInteractorProtocol {
     var networkManager: NetworkManagerProtocol! = NetworkManager()
     
     func getMovieList(page: Int) {
-        networkManager.getPopular(page: page) { (result) in
+        networkManager.getPopularMovies(page: page) { (result) in
             switch result {
             case .success(let movieList):
                 self.output?.movieListDidFetch(movies: movieList.results)

@@ -11,7 +11,7 @@ import CoreLocation
 
 struct MovieList: Hashable, Codable {
     var page: Int
-    var results: [Movie]
+    var results: [PreviewMovie]
     var total_results: Int
     var total_pages: Int
 }

@@ -8,16 +8,16 @@
 
 import Foundation
 
-enum GetPopularResult {
+enum GetPopularMoviesResult {
     case success(MovieList)
     case failure(String)
 }
 
-typealias GetPopularCompletion = (GetPopularResult) -> Void
+typealias GetPopularCompletion = (GetPopularMoviesResult) -> Void
 
 extension NetworkManager {
-    func getPopular(page: Int, completion: @escaping (GetPopularCompletion)) {
-        router.request(.getPopular(page: page)) { (data, response, error) in
+    func getPopularMovies(page: Int, completion: @escaping (GetPopularCompletion)) {
+        router.request(.getPopularMovies(page: page)) { (data, response, error) in
             if let _ = error {
                 completion(.failure(NetworkResponse.checkNetwork.rawValue))
             }

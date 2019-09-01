@@ -9,7 +9,7 @@
 import Foundation
 import CoreLocation
 
-struct Movie: Hashable, Codable {
+struct PreviewMovie: Hashable, Codable {
     
     var id: Int
     var poster_path: String?

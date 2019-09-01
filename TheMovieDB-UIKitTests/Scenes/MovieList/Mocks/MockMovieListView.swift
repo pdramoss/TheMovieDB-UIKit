@@ -12,13 +12,13 @@ import XCTest
 class MockMovieListView: MovieListViewProtocol {
     var presenter: MovieListPresenterProtocol!
     
-    var movies: [Movie] = []
+    var movies: [PreviewMovie] = []
     var error: String = String()
     
     var showMoviesCalled = false
     var showMessageErrorCalled = false
     
-    func showMovies(with movies: [Movie]) {
+    func showMovies(with movies: [PreviewMovie]) {
         self.movies = movies
         showMoviesCalled = true
     }

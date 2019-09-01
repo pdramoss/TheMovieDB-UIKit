@@ -18,7 +18,7 @@ protocol MovieListPresenterProtocol: class {
 }
 
 protocol MovieListInteractorOutputProtocol: class {
-    func movieListDidFetch(movies: [Movie])
+    func movieListDidFetch(movies: [PreviewMovie])
     func failedGetMovieList(error: String)
 }
 
@@ -33,7 +33,7 @@ class MovieListPresenter: MovieListPresenterProtocol {
 }
 
 extension MovieListPresenter: MovieListInteractorOutputProtocol {
-    func movieListDidFetch(movies: [Movie]) {
+    func movieListDidFetch(movies: [PreviewMovie]) {
         view?.showMovies(with: movies)
     }
     

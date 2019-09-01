@@ -10,16 +10,16 @@ import UIKit
 
 protocol MovieListViewProtocol: class {
     var presenter: MovieListPresenterProtocol! { get set }
-    var movies: [Movie] { get set }
+    var movies: [PreviewMovie] { get set }
     
-    func showMovies(with movies: [Movie])
+    func showMovies(with movies: [PreviewMovie])
     func showMessageError(error: String)
 }
 
 class MovieListTableViewController: UITableViewController {
 
     var presenter: MovieListPresenterProtocol!
-    var movies: [Movie] = []
+    var movies: [PreviewMovie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +46,7 @@ class MovieListTableViewController: UITableViewController {
 }
 
 extension MovieListTableViewController: MovieListViewProtocol {
-    func showMovies(with movies: [Movie]) {
+    func showMovies(with movies: [PreviewMovie]) {
         self.movies = movies
         tableView.reloadData()
     }

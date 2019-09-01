@@ -10,12 +10,12 @@ import XCTest
 @testable import TheMovieDB_UIKit
 
 class MockMovieListInteractorOutput: MovieListInteractorOutputProtocol {
-    var movies: [Movie] = []
+    var movies: [PreviewMovie] = []
     var error: String = String()
     var movieListDidFetchCalled = false
     var failedGetMovieListCalled = false
     
-    func movieListDidFetch(movies: [Movie]) {
+    func movieListDidFetch(movies: [PreviewMovie]) {
         self.movies = movies
         movieListDidFetchCalled = true
     }

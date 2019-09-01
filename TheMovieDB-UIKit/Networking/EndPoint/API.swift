@@ -11,7 +11,7 @@ import Alamofire
 
 public enum API {
     case getMovie(id: Int)
-    case getPopular(page: Int)
+    case getPopularMovies(page: Int)
 }
 
 extension API: EndPointType {
@@ -29,14 +29,14 @@ extension API: EndPointType {
         switch self {
         case .getMovie(let id):
             return "\(id)"
-        case .getPopular:
+        case .getPopularMovies:
             return "popular"
         }
     }
     
     var httpMethod: HTTPMethod {
         switch self {
-        case .getMovie, .getPopular:
+        case .getMovie, .getPopularMovies:
             return .get
         }
     }
@@ -47,7 +47,7 @@ extension API: EndPointType {
             return ["api_key": NetworkManager.MovieAPIKey,
                     "language": "es-CO",
                     "region": "CO"]
-        case .getPopular(let page):
+        case .getPopularMovies(let page):
             return ["api_key": NetworkManager.MovieAPIKey,
                     "language": "es-CO",
                     "region": "CO",
@@ -57,7 +57,7 @@ extension API: EndPointType {
     
     var headers: HTTPHeaders? {
         switch self {
-        case .getMovie, .getPopular:
+        case .getMovie, .getPopularMovies:
             return ["Accept": "application/json"]
         }
     }
