@@ -7,14 +7,15 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--MovieListTableViewController-->
         <scene sceneID="Vg9-MN-xc3">
             <objects>
-                <tableViewController id="oyI-bI-pDh" userLabel="MovieListTableViewController" customClass="MovieListTableViewController" customModule="TheMovieDB_UIKit" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VxZ-Yo-0eV">
+                <tableViewController storyboardIdentifier="MovieListTableViewController" id="oyI-bI-pDh" userLabel="MovieListTableViewController" customClass="MovieListTableViewController" customModule="TheMovieDB_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="VxZ-Yo-0eV">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" name="primary"/>
@@ -28,6 +29,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5r-4S-512" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="344" y="113"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="sek-c0-9eK">
+            <objects>
+                <viewController storyboardIdentifier="MovieDetailViewController" id="ePj-ks-f7r" customClass="MovieDetailViewController" customModule="TheMovieDB_UIKit" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="oIR-zy-IFl">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="0zU-EK-fud"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hrl-yG-dbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1312" y="113"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="aS1-0h-Six">

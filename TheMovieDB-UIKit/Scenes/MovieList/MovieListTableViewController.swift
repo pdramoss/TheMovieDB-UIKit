@@ -46,6 +46,10 @@ class MovieListTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.showMovieDetailSelection(id: self.movies[indexPath.row].id)
+    }
+    
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 175
     }
@@ -60,5 +64,11 @@ extension MovieListTableViewController: MovieListViewProtocol {
     
     func showMessageError(error: String) {
         print("ERROR: \(error)")
+    }
+}
+
+extension MovieListTableViewController {
+    static var storyboardID: String {
+        return String(describing: self)
     }
 }

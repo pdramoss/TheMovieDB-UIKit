@@ -12,6 +12,7 @@ protocol MovieListRouterProtocol: class {
     var viewController: UIViewController? { get set }
 
     func showAlert(for error: String)
+    func pushToMovieDetail(id: Int)
 }
 
 class MovieListRouter: MovieListRouterProtocol {
@@ -37,5 +38,12 @@ class MovieListRouter: MovieListRouterProtocol {
         let alert = UIAlertController(title: nil, message: error, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Aceptar", style: .cancel, handler: nil))
         viewController?.present(alert, animated: true, completion: nil)
+    }
+    
+    func pushToMovieDetail(id: Int) {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let movieDetailViewController = storyboard.instantiateViewController(withIdentifier: MovieDetailViewController.storyboardID) as! MovieDetailViewController
+        MovieDetailRouter.createMovieDetailModuler(movieDetailRef: movieDetailViewController, id: id)
+        viewController?.navigationController?.pushViewController(movieDetailViewController, animated: true)
     }
 }

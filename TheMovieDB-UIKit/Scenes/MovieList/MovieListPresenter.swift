@@ -14,6 +14,7 @@ protocol MovieListPresenterProtocol: class {
     var interactor: MovieListInteractorProtocol! { get set }
     
     func viewDidLoad()
+    func showMovieDetailSelection(id: Int)
     
 }
 
@@ -29,6 +30,10 @@ class MovieListPresenter: MovieListPresenterProtocol {
     
     func viewDidLoad() {
         interactor.getMovieList(page: 1)
+    }
+    
+    func showMovieDetailSelection(id: Int) {
+        router.pushToMovieDetail(id: id)
     }
 }
 
