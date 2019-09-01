@@ -10,7 +10,7 @@ import UIKit
 
 protocol MovieListRouterProtocol: class {
     var viewController: UIViewController? { get set }
-    
+
     func showAlert(for error: String)
 }
 
@@ -18,7 +18,7 @@ class MovieListRouter: MovieListRouterProtocol {
     var viewController: UIViewController?
     
     class func createMovieListModuler(movieListRef: MovieListTableViewController) {
-        let presenter: MovieListPresenterProtocol & MovieListOutputInteractorProtocol = MovieListPresenter()
+        let presenter: MovieListPresenterProtocol & MovieListInteractorOutputProtocol = MovieListPresenter()
         
         let router = MovieListRouter()
         router.viewController = movieListRef

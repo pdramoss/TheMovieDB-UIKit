@@ -9,18 +9,18 @@
 import Foundation
 
 protocol MovieListInteractorProtocol: class {
-    var output: MovieListOutputInteractorProtocol? { get set }
+    var output: MovieListInteractorOutputProtocol? { get set }
     var networkManager: NetworkManagerProtocol! { get set }
     
-    func getMovieList()
+    func getMovieList(page: Int)
 }
 
 class MovieListInteractor: MovieListInteractorProtocol {
-    var output: MovieListOutputInteractorProtocol?
+    var output: MovieListInteractorOutputProtocol?
     var networkManager: NetworkManagerProtocol! = NetworkManager()
     
-    func getMovieList() {
-        networkManager.getPopular(page: 1) { (result) in
+    func getMovieList(page: Int) {
+        networkManager.getPopular(page: page) { (result) in
             switch result {
             case .success(let movieList):
                 self.output?.movieListDidFetch(movies: movieList.results)
