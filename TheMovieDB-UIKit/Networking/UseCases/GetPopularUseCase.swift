@@ -1,5 +1,5 @@
 //
-//  GetMovieUseCase.swift
+//  GetPopularUseCase.swift
 //  TheMovieDB-UIKit
 //
 //  Created by Pedro Ramos on 31/08/19.
@@ -8,16 +8,16 @@
 
 import Foundation
 
-enum GetMovieResult {
-    case success(Movie)
+enum GetPopularResult {
+    case success(MovieList)
     case failure(String)
 }
 
-typealias GetMovieCompletion = (GetMovieResult) -> Void
+typealias GetPopularCompletion = (GetPopularResult) -> Void
 
 extension NetworkManager {
-    func getMovie(id: Int, completion: @escaping (GetMovieCompletion)) {
-        router.request(.getMovie(id: id)) { (data, response, error) in
+    func getPopular(page: Int, completion: @escaping (GetPopularCompletion)) {
+        router.request(.getPopular(page: page)) { (data, response, error) in
             if let _ = error {
                 completion(.failure(NetworkResponse.checkNetwork.rawValue))
             }
@@ -31,8 +31,8 @@ extension NetworkManager {
                         return
                     }
                     do {
-                        let movie: Movie = try self.load(data: responseData)
-                        completion(.success(movie))
+                        let movieList: MovieList = try self.load(data: responseData)
+                        completion(.success(movieList))
                     } catch {
                         completion(.failure(NetworkResponse.unableToDecode.rawValue))
                     }

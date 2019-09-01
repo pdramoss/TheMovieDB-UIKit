@@ -34,44 +34,18 @@ enum NetworkManagerError: Error {
 protocol NetworkManagerProtocol {
     static var MovieAPIKey: String { get }
     var router: Router<API> { get }
+    
+    func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>
+    
     func getMovie(id: Int, completion: @escaping (GetMovieCompletion) )
+    func getPopular(page: Int, completion: @escaping (GetPopularCompletion))
 }
 
 struct NetworkManager: NetworkManagerProtocol {
     static let MovieAPIKey = "18a3033e9791992fa76ae5c4071acd0f"
     var router: Router<API> = Router<API>()
     
-    func getMovie(id: Int, completion: @escaping (GetMovieCompletion)) {
-        router.request(.getMovie(id: id)) { (data, response, error) in
-            if let _ = error {
-                completion(.failure(NetworkResponse.checkNetwork.rawValue))
-            }
-            
-            if let response = response {
-                let result = self.handleNetworkResponse(response)
-                switch result {
-                case .success:
-                    guard let responseData = data else {
-                        completion(.failure(NetworkResponse.noData.rawValue))
-                        return
-                    }
-                    do {
-                        let movie: Movie = try self.load(data: responseData)
-                        completion(.success(movie))
-                    } catch {
-                        completion(.failure(NetworkResponse.unableToDecode.rawValue))
-                    }
-                case .failure(let networkFailureError):
-                    completion(.failure(networkFailureError))
-                }
-            }
-        }
-    }
-}
-
-extension NetworkManager {
-    
-    fileprivate func load<T: Decodable> (data: Data?, as type: T.Type = T.self) throws -> T {
+    func load<T: Decodable> (data: Data?, as type: T.Type = T.self) throws -> T {
         guard let data = data else {
             throw NetworkManagerError.notDecodeData
         }
@@ -84,7 +58,7 @@ extension NetworkManager {
         }
     }
     
-    fileprivate func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String>{
+    func handleNetworkResponse(_ response: HTTPURLResponse) -> Result<String> {
         switch response.statusCode {
         case 200...299: return .success
         case 401...500: return .failure(NetworkResponse.authenticationError.rawValue)
