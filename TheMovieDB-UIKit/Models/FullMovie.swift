@@ -33,6 +33,7 @@ struct FullMovie: Hashable, Codable {
     var video: Bool
     var vote_average: Float
     var vote_count: Int
+    var backdrop_path: String?
 }
 
 struct Genres: Hashable, Codable {

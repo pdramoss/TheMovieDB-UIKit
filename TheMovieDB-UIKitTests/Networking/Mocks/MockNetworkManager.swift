@@ -40,4 +40,12 @@ class MockNetworkManager: NetworkManagerProtocol {
             completion(.failure(NetworkResponse.noData.rawValue))
         }
     }
+    
+    func getImage(path: String, completion: @escaping (GetImageCompletion)) {
+        if path.isEmpty {
+            completion(.success(UIImage()))
+        } else {
+            completion(.failure(NetworkResponse.noData.rawValue))
+        }
+    }
 }

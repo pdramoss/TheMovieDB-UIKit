@@ -6,7 +6,7 @@
 //  Copyright © 2019 Pedro Ramos. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 protocol MovieDetailPresenterProtocol: class {
     
@@ -22,6 +22,9 @@ protocol MovieDetailPresenterProtocol: class {
 protocol MovieDetailInteractorOutputProtocol: class {
     func movieDetailDidFetch(movie: FullMovie)
     func failedGetMovieDetail(error: String)
+    
+    func movieDetailImageDidFetch(image: UIImage)
+    func failedGetMovieDetailImage(error: String)
 }
 
 class MovieDetailPresenter: MovieDetailPresenterProtocol {
@@ -43,9 +46,20 @@ class MovieDetailPresenter: MovieDetailPresenterProtocol {
 extension MovieDetailPresenter: MovieDetailInteractorOutputProtocol {
     func movieDetailDidFetch(movie: FullMovie) {
         view?.displayMovieDetail(movie)
+        if let path = movie.backdrop_path {
+            interactor.getMovieImage(path: path)
+        }
     }
     
     func failedGetMovieDetail(error: String) {
+        router.showAlert(for: error)
+    }
+    
+    func movieDetailImageDidFetch(image: UIImage) {
+        view?.displayImage(image)
+    }
+    
+    func failedGetMovieDetailImage(error: String) {
         router.showAlert(for: error)
     }
 }

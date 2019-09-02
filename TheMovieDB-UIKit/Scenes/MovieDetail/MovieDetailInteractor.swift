@@ -13,6 +13,7 @@ protocol MovieDetailInteractorProtocol: class {
     var networkManager: NetworkManagerProtocol! { get set }
     
     func getMovieInformation(id: Int)
+    func getMovieImage(path: String)
 }
 
 class MovieDetailInteractor: MovieDetailInteractorProtocol {
@@ -26,6 +27,17 @@ class MovieDetailInteractor: MovieDetailInteractorProtocol {
                 self.output?.movieDetailDidFetch(movie: movie)
             case .failure(let error):
                 self.output?.failedGetMovieDetail(error: error)
+            }
+        }
+    }
+    
+    func getMovieImage(path: String) {
+        networkManager.getImage(path: path) { (result) in
+            switch result {
+            case .success(let image):
+                self.output?.movieDetailImageDidFetch(image: image)
+            case .failure(let error):
+                self.output?.failedGetMovieDetailImage(error: error)
             }
         }
     }

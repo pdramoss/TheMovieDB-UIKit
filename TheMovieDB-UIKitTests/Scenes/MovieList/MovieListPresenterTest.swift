@@ -51,5 +51,10 @@ class MovieListPresenterTest: XCTestCase {
         XCTAssertTrue(mockView!.showMessageErrorCalled)
         XCTAssertTrue(mockRouter!.showAlertCalled)
     }
+    
+    func testExample3() {
+        sut?.showMovieDetailSelection(id: 1)
+        XCTAssertTrue(mockRouter!.pushToMovieDetailCalled)
+    }
 
 }

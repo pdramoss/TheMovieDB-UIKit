@@ -16,8 +16,14 @@ class MockMovieListPresenter: MovieListPresenterProtocol {
     var interactor: MovieListInteractorProtocol!
     
     var viewDidLoadCalled = false
+    var showMovieDetailSelectionCalled = false
     
     func viewDidLoad() {
         viewDidLoadCalled = true
     }
+    
+    func showMovieDetailSelection(id: Int) {
+        showMovieDetailSelectionCalled = true
+    }
+    
 }

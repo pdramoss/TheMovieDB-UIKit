@@ -13,11 +13,16 @@ class MockMovieListRouter: MovieListRouterProtocol {
     
     var viewController: UIViewController?
     var showAlertCalled = false
+    var pushToMovieDetailCalled = false
     var error: String = String()
     
     func showAlert(for error: String) {
         self.error = error
         showAlertCalled = true
+    }
+    
+    func pushToMovieDetail(id: Int) {
+        pushToMovieDetailCalled = true
     }
     
 }
