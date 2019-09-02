@@ -11,7 +11,7 @@ import CoreLocation
 
 let previewMovieInformation: PreviewMovie = load("movie.json")
 let popularInformation: MovieList = load("popular.json")
-let fullMovieInformation: FullMovie = load(load("movie.json"))
+let fullMovieInformation: FullMovie = load("movie.json")
 
 func load<T: Decodable>(_ filename: String, as type: T.Type = T.self) -> T {
     let data: Data

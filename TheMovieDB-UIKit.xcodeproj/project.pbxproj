@@ -20,6 +20,13 @@
 		E50164FF231C55B10066FA5C /* MovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E50164FE231C55B10066FA5C /* MovieDetailRouter.swift */; };
 		E5016502231C5DB50066FA5C /* Extension-Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5016501231C5DB50066FA5C /* Extension-Color.swift */; };
 		E5016504231C664E0066FA5C /* GetImageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5016503231C664E0066FA5C /* GetImageUseCase.swift */; };
+		E501650A231CC2670066FA5C /* MockMovieDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5016509231CC2670066FA5C /* MockMovieDetailRouter.swift */; };
+		E501650C231CC27F0066FA5C /* MockMovieDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = E501650B231CC27F0066FA5C /* MockMovieDetailInteractor.swift */; };
+		E501650E231CC2940066FA5C /* MockMovieDetailInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E501650D231CC2940066FA5C /* MockMovieDetailInteractorOutput.swift */; };
+		E5016510231CC2A90066FA5C /* MockMovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E501650F231CC2A90066FA5C /* MockMovieDetailView.swift */; };
+		E5016512231CC2BF0066FA5C /* MockMovieDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5016511231CC2BF0066FA5C /* MockMovieDetailPresenter.swift */; };
+		E5016514231CC4CC0066FA5C /* MovieDetailInteractorTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5016513231CC4CC0066FA5C /* MovieDetailInteractorTest.swift */; };
+		E5016516231CC4F10066FA5C /* MovieDetailPresenterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5016515231CC4F10066FA5C /* MovieDetailPresenterTest.swift */; };
 		E51B748A231B2EDB00BCAB61 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B7489231B2EDB00BCAB61 /* NetworkManager.swift */; };
 		E51B748D231B336E00BCAB61 /* PreviewMovie.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B748C231B336E00BCAB61 /* PreviewMovie.swift */; };
 		E51B7491231B383B00BCAB61 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = E51B7490231B383B00BCAB61 /* API.swift */; };
@@ -78,6 +85,13 @@
 		E50164FE231C55B10066FA5C /* MovieDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailRouter.swift; sourceTree = "<group>"; };
 		E5016501231C5DB50066FA5C /* Extension-Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension-Color.swift"; sourceTree = "<group>"; };
 		E5016503231C664E0066FA5C /* GetImageUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetImageUseCase.swift; sourceTree = "<group>"; };
+		E5016509231CC2670066FA5C /* MockMovieDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieDetailRouter.swift; sourceTree = "<group>"; };
+		E501650B231CC27F0066FA5C /* MockMovieDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieDetailInteractor.swift; sourceTree = "<group>"; };
+		E501650D231CC2940066FA5C /* MockMovieDetailInteractorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieDetailInteractorOutput.swift; sourceTree = "<group>"; };
+		E501650F231CC2A90066FA5C /* MockMovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieDetailView.swift; sourceTree = "<group>"; };
+		E5016511231CC2BF0066FA5C /* MockMovieDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockMovieDetailPresenter.swift; sourceTree = "<group>"; };
+		E5016513231CC4CC0066FA5C /* MovieDetailInteractorTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailInteractorTest.swift; sourceTree = "<group>"; };
+		E5016515231CC4F10066FA5C /* MovieDetailPresenterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailPresenterTest.swift; sourceTree = "<group>"; };
 		E51B7489231B2EDB00BCAB61 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		E51B748C231B336E00BCAB61 /* PreviewMovie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewMovie.swift; sourceTree = "<group>"; };
 		E51B7490231B383B00BCAB61 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -182,6 +196,28 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		E5016507231CC1FE0066FA5C /* MovieDetail */ = {
+			isa = PBXGroup;
+			children = (
+				E5016508231CC2400066FA5C /* Mocks */,
+				E5016513231CC4CC0066FA5C /* MovieDetailInteractorTest.swift */,
+				E5016515231CC4F10066FA5C /* MovieDetailPresenterTest.swift */,
+			);
+			path = MovieDetail;
+			sourceTree = "<group>";
+		};
+		E5016508231CC2400066FA5C /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				E5016509231CC2670066FA5C /* MockMovieDetailRouter.swift */,
+				E501650B231CC27F0066FA5C /* MockMovieDetailInteractor.swift */,
+				E501650D231CC2940066FA5C /* MockMovieDetailInteractorOutput.swift */,
+				E501650F231CC2A90066FA5C /* MockMovieDetailView.swift */,
+				E5016511231CC2BF0066FA5C /* MockMovieDetailPresenter.swift */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
 		E51B7482231B216900BCAB61 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +298,7 @@
 		E51B74AB231B837400BCAB61 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				E5016507231CC1FE0066FA5C /* MovieDetail */,
 				E51B74AC231B83E500BCAB61 /* MovieList */,
 			);
 			path = Scenes;
@@ -590,14 +627,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E501650C231CC27F0066FA5C /* MockMovieDetailInteractor.swift in Sources */,
 				E51B74B3231B85F700BCAB61 /* MockMovieListInteractorOutput.swift in Sources */,
 				E51B74C1231B8C6100BCAB61 /* MovieListInteractorTest.swift in Sources */,
 				E51B74B1231B850300BCAB61 /* MockMovieListInteractor.swift in Sources */,
+				E5016512231CC2BF0066FA5C /* MockMovieDetailPresenter.swift in Sources */,
+				E5016510231CC2A90066FA5C /* MockMovieDetailView.swift in Sources */,
+				E501650A231CC2670066FA5C /* MockMovieDetailRouter.swift in Sources */,
 				E50164EB231B94020066FA5C /* MockMovieListView.swift in Sources */,
 				E50164ED231B94B80066FA5C /* MockMovieListPresenter.swift in Sources */,
+				E5016516231CC4F10066FA5C /* MovieDetailPresenterTest.swift in Sources */,
 				E51B74AF231B841400BCAB61 /* MockMovieListRouter.swift in Sources */,
 				E50164EF231B95140066FA5C /* MovieListPresenterTest.swift in Sources */,
 				E51B74B7231B874B00BCAB61 /* MockNetworkManager.swift in Sources */,
+				E5016514231CC4CC0066FA5C /* MovieDetailInteractorTest.swift in Sources */,
+				E501650E231CC2940066FA5C /* MockMovieDetailInteractorOutput.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
